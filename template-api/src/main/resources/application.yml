@@ -1,0 +1,16 @@
+server:
+  port: 8080
+  shutdown: graceful
+  error:
+    whitelabel:
+      enabled: false
+  undertow:
+    threads:
+      io: 8
+      worker: 256
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local

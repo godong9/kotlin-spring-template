@@ -4,10 +4,9 @@ import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class CleanArchitectureKotlinSpringApplicationTests {
+class TemplateApiApplicationTests {
 
     @Test
     fun contextLoads() {
     }
-
 }
