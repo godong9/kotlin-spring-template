@@ -2,7 +2,12 @@ package com.gdgo.spring.template.adapter.out.persistence.jpa.team
 
 import com.gdgo.spring.template.adapter.out.persistence.jpa.MutableBaseEntity
 import com.gdgo.spring.template.domain.team.Team
-import javax.persistence.*
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
+import javax.persistence.Index
+import javax.persistence.Table
 
 @Entity
 @Table(
