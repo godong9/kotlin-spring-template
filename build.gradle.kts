@@ -2,11 +2,14 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     val kotlinVersion = "1.6.10"
+    val springBootVersion = "2.6.3"
+    val springDependencyManagementVersion = "1.0.11.RELEASE"
+    val ktlintVersion = "10.2.0"
 
-    id("org.springframework.boot") version "2.6.3"
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
-    id("org.jlleitschuh.gradle.ktlint-idea") version "10.2.0"
+    id("org.springframework.boot") version springBootVersion
+    id("io.spring.dependency-management") version springDependencyManagementVersion
+    id("org.jlleitschuh.gradle.ktlint") version ktlintVersion
+    id("org.jlleitschuh.gradle.ktlint-idea") version ktlintVersion
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
@@ -22,6 +25,9 @@ allprojects {
 }
 
 subprojects {
+    val mockkVersion = "1.12.2"
+    val kotestVersion = "5.0.3"
+
     apply(plugin = "idea")
     apply(plugin = "kotlin")
     apply(plugin = "kotlin-spring")
@@ -72,11 +78,11 @@ subprojects {
             exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
         }
         /* mockk */
-        testImplementation("io.mockk:mockk:1.12.2")
+        testImplementation("io.mockk:mockk:$mockkVersion")
         /* kotest */
-        testImplementation("io.kotest:kotest-runner-junit5:5.0.3")
-        testImplementation("io.kotest:kotest-assertions-core:5.0.3")
-        testImplementation("io.kotest:kotest-property:5.0.3")
+        testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
+        testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
+        testImplementation("io.kotest:kotest-property:$kotestVersion")
     }
 }
 
