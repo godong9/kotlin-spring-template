@@ -1,4 +1,4 @@
-package com.gdgo.spring.template.web
+package com.gdgo.spring.template.api.web
 
 import org.springframework.web.bind.annotation.GetMapping
 

@@ -1,4 +1,4 @@
-package com.gdgo.spring.template
+package com.gdgo.spring.template.api
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

@@ -1,4 +1,4 @@
-package com.gdgo.spring.template
+package com.gdgo.spring.template.api
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
