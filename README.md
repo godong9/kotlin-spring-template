@@ -1,4 +1,4 @@
-# clean-architecture-kotlin-spring
+# kotlin-spring-template
 
 ## Getting Started
 
