@@ -10,7 +10,7 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
-    implementation("com.h2database:h2:2.1.214")
+    implementation("com.h2database:h2")
 }
 
 allOpen {

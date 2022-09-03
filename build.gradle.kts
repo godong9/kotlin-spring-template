@@ -13,6 +13,7 @@ plugins {
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
+    kotlin("kapt") version kotlinVersion
 }
 
 allprojects {
@@ -27,11 +28,13 @@ allprojects {
 subprojects {
     val mockkVersion = "1.12.2"
     val kotestVersion = "5.0.3"
+    val querydslVersion = "5.0.0"
 
     apply(plugin = "idea")
     apply(plugin = "kotlin")
     apply(plugin = "kotlin-spring")
     apply(plugin = "kotlin-jpa")
+    apply(plugin = "kotlin-kapt")
     apply(plugin = "org.springframework.boot")
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.jlleitschuh.gradle.ktlint")
@@ -72,7 +75,16 @@ subprojects {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+        /* querydsl */
+        implementation("com.querydsl:querydsl-jpa:$querydslVersion")
+        implementation("com.querydsl:querydsl-core:$querydslVersion")
+        implementation("com.querydsl:querydsl-apt:$querydslVersion")
+        kapt("com.querydsl:querydsl-apt:$querydslVersion:jpa")
+
         annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+        /* querydsl */
+        annotationProcessor("com.querydsl:querydsl-apt:$querydslVersion:jpa")
 
         testImplementation("org.springframework.boot:spring-boot-starter-test") {
             exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
@@ -83,6 +95,10 @@ subprojects {
         testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
         testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
         testImplementation("io.kotest:kotest-property:$kotestVersion")
+    }
+
+    sourceSets["main"].withConvention(org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet::class){
+        kotlin.srcDir("$buildDir/generated/source/kapt/main")
     }
 }
 
