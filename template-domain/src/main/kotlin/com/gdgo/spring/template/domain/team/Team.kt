@@ -5,5 +5,5 @@ import com.gdgo.spring.template.domain.member.Member
 class Team(
     val id: Long,
     val name: String,
-    val members: List<Member>,
+    val members: List<Member>?,
 )
