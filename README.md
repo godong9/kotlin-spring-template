@@ -4,7 +4,6 @@
 
 - Run TemplateApiApplication
     - Active profiles: local
-- Swagger Doc URL: http://localhost:8080/swagger-ui/index.html
 
 ## Project Structure
 
