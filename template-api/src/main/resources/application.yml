@@ -9,8 +9,19 @@ server:
       io: 8
       worker: 256
 
+spring:
+  config:
+    import: application-adapter.yml
+  application:
+    name: template-api
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
 ---
 spring:
   config:
     activate:
       on-profile: local
+
+server:
+  port: 8080
