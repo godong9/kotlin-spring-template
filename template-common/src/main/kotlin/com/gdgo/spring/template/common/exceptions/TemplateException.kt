@@ -1,4 +1,4 @@
-package com.gdgo.spring.template.api.common.exceptions
+package com.gdgo.spring.template.common.exceptions
 
 class TemplateException(
     private val exceptionType: ExceptionType,

@@ -1,4 +1,4 @@
-package com.gdgo.spring.template.api.common.extensions
+package com.gdgo.spring.template.common.extensions
 
 import java.time.Instant
 import java.time.LocalDateTime

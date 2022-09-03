@@ -1,4 +1,4 @@
-package com.gdgo.spring.template.api.common.logger
+package com.gdgo.spring.template.common.logger
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
