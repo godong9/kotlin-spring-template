@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext
 @EnableJpaAuditing
 @EnableTransactionManagement
 @EntityScan(basePackages = ["com.gdgo.spring.template.adapter.out.persistence.jpa"])
-@EnableJpaRepositories(basePackages = ["com.gdgo.spring.template..adapter.out.persistence.jpa"])
+@EnableJpaRepositories(basePackages = ["com.gdgo.spring.template.adapter.out.persistence.jpa"])
 class JpaConfig(
     @PersistenceContext
     private val entityManager: EntityManager,
