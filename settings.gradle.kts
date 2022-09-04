@@ -4,7 +4,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = "clean-architecture-kotlin-spring"
+rootProject.name = "kotlin-spring-template"
 
 include(":template-common")
 include(":template-domain")
