@@ -17,7 +17,7 @@ class TeamController(
     @PostMapping("/teams")
     fun createTeam(@RequestBody createTeamRequest: CreateTeamRequest): CreateTeamResponse {
         val team = createTeamWebAdapter.createTeam(CreateTeamCommand(name = createTeamRequest.teamName))
-        return CreateTeamResponse(id = team.id)
+        return CreateTeamResponse(teamId = team.id)
     }
 
     data class CreateTeamRequest(
@@ -28,7 +28,7 @@ class TeamController(
     )
 
     data class CreateTeamResponse(
-        @Schema(description = "Team id", name = "id")
-        val id: Long,
+        @Schema(description = "Team id", name = "team_id")
+        val teamId: Long,
     )
 }
