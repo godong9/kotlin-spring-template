@@ -27,10 +27,10 @@
         - dependencies: common, domain, application
     - template-api
         - Web API module
-        - dependencies: common, domain, application, adapter
+        - dependencies: common, application, adapter
     - template-batch
         - Web Batch module
-        - dependencies: common, domain, application, adapter
+        - dependencies: common, application, adapter
 
 ## References
 

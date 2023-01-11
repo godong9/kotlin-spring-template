@@ -4,7 +4,6 @@ dependencies {
     implementation(project(":template-common"))
     implementation(project(":template-application"))
     implementation(project(":template-adapter"))
-    implementation(project(":template-domain"))
 
     implementation("org.springframework.boot:spring-boot-starter-web") {
         exclude("org.springframework.boot", "spring-boot-starter-tomcat")

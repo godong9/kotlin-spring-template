@@ -1,7 +1,14 @@
 package com.gdgo.spring.template.application.port.`in`.team
 
-import com.gdgo.spring.template.domain.team.Team
-
 interface CreateTeamUseCase {
-    fun createTeam(command: CreateTeamCommand): Team
+    fun createTeam(command: CreateTeamCommand): CreateTeamResult
 }
+
+data class CreateTeamCommand(
+    val name: String,
+)
+
+data class CreateTeamResult(
+    val id: Long,
+    val name: String,
+)
