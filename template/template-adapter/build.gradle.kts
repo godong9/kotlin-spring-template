@@ -6,9 +6,9 @@ apply(plugin = "kotlin-kapt")
 dependencies {
     val querydslVersion = "5.0.0"
 
-    implementation(project(":template-common"))
-    implementation(project(":template-domain"))
-    implementation(project(":template-application"))
+    implementation(project(":template:template-common"))
+    implementation(project(":template:template-domain"))
+    implementation(project(":template:template-application"))
 
     runtimeOnly("mysql:mysql-connector-java")
 

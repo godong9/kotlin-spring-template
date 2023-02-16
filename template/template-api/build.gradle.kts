@@ -1,9 +1,9 @@
 dependencies {
     val openapiVersion = "1.6.11"
 
-    implementation(project(":template-common"))
-    implementation(project(":template-application"))
-    implementation(project(":template-adapter"))
+    implementation(project(":template:template-common"))
+    implementation(project(":template:template-application"))
+    implementation(project(":template:template-adapter"))
 
     implementation("org.springframework.boot:spring-boot-starter-web") {
         exclude("org.springframework.boot", "spring-boot-starter-tomcat")
