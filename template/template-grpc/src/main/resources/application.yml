@@ -1,0 +1,13 @@
+grpc:
+  port: 8000
+  enableReflection: true
+  shutdownGrace: 30
+spring:
+  application:
+    name: template-grpc
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local

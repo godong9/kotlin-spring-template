@@ -5,11 +5,13 @@ plugins {
     val springBootVersion = "2.6.3"
     val springDependencyManagementVersion = "1.0.11.RELEASE"
     val ktlintVersion = "10.2.0"
+    val googleProtobufVersion = "0.9.2"
 
     id("org.springframework.boot") version springBootVersion
     id("io.spring.dependency-management") version springDependencyManagementVersion
     id("org.jlleitschuh.gradle.ktlint") version ktlintVersion
     id("org.jlleitschuh.gradle.ktlint-idea") version ktlintVersion
+    id("com.google.protobuf") version googleProtobufVersion
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
@@ -38,6 +40,7 @@ subprojects {
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.jlleitschuh.gradle.ktlint")
     apply(plugin = "org.jlleitschuh.gradle.ktlint-idea")
+    apply(plugin = "com.google.protobuf")
 
     configure<io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension> {
         imports(
@@ -91,6 +94,9 @@ subprojects {
     kotlin.sourceSets.main {
         kotlin.srcDir("$buildDir/generated/source/kapt/main")
     }
+
+    tasks.bootJar { enabled = false }
+    tasks.jar { enabled = true }
 }
 
 tasks.bootJar { enabled = false }

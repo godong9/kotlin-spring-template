@@ -1,0 +1,6 @@
+### Hello
+GRPC localhost:8000/com.gdgo.spring.template.SampleService/ListSamples
+
+{
+  "id": "11"
+}

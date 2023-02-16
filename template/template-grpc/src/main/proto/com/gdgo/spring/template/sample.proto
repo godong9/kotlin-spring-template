@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.gdgo.spring.template;
+
+option java_outer_classname = "RpcProto";
+option java_package = "com.gdgo.spring.template";
+
+service SampleService {
+    rpc ListSamples(ListSamplesRequest) returns (ListSamplesResponse) {}
+}
+
+message ListSamplesRequest {
+    string id = 1;
+}
+
+message ListSamplesResponse {
+    repeated Sample samples = 1;
+}
+
+message Sample {
+    string name = 1;
+    optional string description = 2;
+}
